@@ -53,7 +53,7 @@ public class SoundGrid extends JFrame implements ActionListener{
 		
 		for (int row=0; row < 8; ++row) {
 			for (int column=0; column < 8; ++column) {
-				JButton button = new JButton(Integer.toString((row*8) + (column + 1)));
+				JButton button = new JButton(Integer.toString((row*8) + column));
 				button.addActionListener(this);
 				button.setActionCommand(String.format("%d", (row*8) + column));
 				buttonArray[row][column] = button;
@@ -64,7 +64,7 @@ public class SoundGrid extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		System.out.printf("Button %s pressed\n", e.getActionCommand());
 	}
 
 }
